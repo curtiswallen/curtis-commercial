@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ $.Site.Language.Lang }}">
+  
+  {{ partial "head" . }}
+  
+  <body>
+
+  <header>
+    <div id="name" class="name">CURTIS</div>
+    <div id="name2" class="name">WALLEN</div>
+    <div id="nav">{{ partial "nav" . }}</div>
+  </header>
+
+  <div id="biocontainer">
+    <div id="bio">
+    <p>Curtis Wallen<br>
+    b. 1989 Branson, MO<br>
+    Based in Brooklyn, NY</p>
+
+    <p><a href="mailto:studio@curtiswallen.com">studio@curtiswallen.com</a><br>
+    +1 417 365 0126</p>
+    </div>
+    <div id="bioclose">X</div>
+  </div>
+
+  <div id="content">
+
+    {{ block "main" . }}{{ end }}
+
+  </div>
+
+  {{ partial "foot" . }}
+
+  {{ $modernizr := resources.Get "js/vendor/modernizr-3.11.2.min.js" }}
+  {{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.1.min.js" }}
+  {{ $masonry := resources.Get "js/vendor/masonry.pkgd.min.js" }}
+  {{ $simplelightbox := resources.Get "js/vendor/simple-lightbox.js" }}
+  {{ $imagesloaded := resources.Get "js/vendor/imagesloaded.pkgd.min.js" }}
+  {{ $swiper := resources.Get "js/vendor/swiper-bundle.min.js" }}
+  {{ $plugins := resources.Get "js/plugins.js" }}
+  {{ $main := resources.Get "js/main.js" }}
+
+  {{ $fullscript := slice $modernizr $jquery $masonry $simplelightbox $imagesloaded $swiper $plugins $main | resources.Concat "js/vendor.js" | minify | fingerprint }}
+  <script src="{{ $fullscript.RelPermalink }}" integrity="{{ $fullscript.Data.Integrity }}"></script>
+
+  </body>
+
+</html>

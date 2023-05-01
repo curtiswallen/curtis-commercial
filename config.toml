@@ -1,0 +1,62 @@
+baseURL = 'http://curtiswallen.com'
+languageCode = 'en-us'
+title = 'Curtis Wallen'
+
+[build]
+  writeStats = true
+
+[module]
+[[module.mounts]]
+  source = 'content'
+  target = 'content'
+[[module.mounts]]
+  source = 'static'
+  target = 'static'
+[[module.mounts]]
+  source = 'layouts'
+  target = 'layouts'
+[[module.mounts]]
+  source = 'data'
+  target = 'data'
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = 'i18n'
+  target = 'i18n'
+[[module.mounts]]
+  source = 'archetypes'
+  target = 'archetypes'
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 0
+    [minify.tdewolff.html]
+      keepComments = false
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = false
+      keepWhitespace = false
+    [minify.tdewolff.js]
+      keepVarNames = false
+      noNullishOperator = false
+      precision = 0
+    [minify.tdewolff.json]
+      keepNumbers = false
+      precision = 0
+    [minify.tdewolff.svg]
+      keepComments = false
+      precision = 0
+    [minify.tdewolff.xml]
+      keepWhitespace = false

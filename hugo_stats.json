@@ -1,0 +1,45 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "br",
+      "div",
+      "footer",
+      "head",
+      "header",
+      "html",
+      "img",
+      "input",
+      "link",
+      "meta",
+      "p",
+      "script",
+      "title"
+    ],
+    "classes": [
+      "grid",
+      "grid-item",
+      "grid-sizer",
+      "gridslide",
+      "gutter-sizer",
+      "lazyload",
+      "name",
+      "slider"
+    ],
+    "ids": [
+      "bio",
+      "bioclose",
+      "biocontainer",
+      "content",
+      "gridCount",
+      "gridSlide",
+      "gridSlider",
+      "images",
+      "name",
+      "name2",
+      "nav",
+      "sliders"
+    ]
+  }
+}
