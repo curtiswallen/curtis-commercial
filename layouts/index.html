@@ -2,17 +2,15 @@
 
 	<div class="grid">
 		<div class="grid-sizer"></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r081872.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r081872.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
-		<div class="grid-item"><a href="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"><img class="lazyload" src="https://www.curtiswallen.com/site/assets/files/1/r084452.jpg"></a></div>
+		{{ with .Site.GetPage "/homepage" }}
+
+			{{ range .Params.images }}
+
+			<div class="grid-item"><a href="{{ .asset.url }}"><img class="lazyload" src="{{ .asset.url }}?auto=format&w=1200&q=100"></a></div>
+
+			{{ end }}
+
+		{{ end }}
 	</div>
 
 {{ end }}

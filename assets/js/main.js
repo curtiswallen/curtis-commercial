@@ -51,3 +51,9 @@ window.onresize = function(event) {
 $("img.lazyload").on("load",function(){
     $grid.masonry();
   });
+
+$( document ).ready(function() {
+  var columncount = 100/output.innerHTML;
+  $('.grid-item, .grid-sizer').css("width", columncount + "%");
+  $grid.masonry();
+});

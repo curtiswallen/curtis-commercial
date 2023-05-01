@@ -21,8 +21,6 @@
       "grid",
       "grid-item",
       "grid-sizer",
-      "gridslide",
-      "gutter-sizer",
       "lazyload",
       "name",
       "slider"
@@ -35,7 +33,6 @@
       "gridCount",
       "gridSlide",
       "gridSlider",
-      "images",
       "name",
       "name2",
       "nav",
