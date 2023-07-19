@@ -6,28 +6,21 @@
   <body>
 
   <header>
-    <div id="name" class="name">CURTIS</div>
-    <div id="name2" class="name">WALLEN</div>
-    <div id="nav">{{ partial "nav" . }}</div>
+    <div id="name" class="name">Curtis Wallen</div>
+
+    <nav>
+      <ul>
+        {{ range where .Site.Pages "Params.collection" true }}
+          <li><a href="{{ .RelPermalink }}"><img src="{{ if .Params.images }} {{ range first 1 .Params.images }} {{ .asset.url }}?auto=format&w=1200&q=100 {{ end }} {{ end }}">{{ .Params.shortTitle }}</a></li>
+        {{ end }}
+        <li><a href="/info"><img src="">Info</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div id="biocontainer">
-    <div id="bio">
-    <p>Curtis Wallen<br>
-    b. 1989 Branson, MO<br>
-    Based in Brooklyn, NY</p>
 
-    <p><a href="mailto:studio@curtiswallen.com">studio@curtiswallen.com</a><br>
-    +1 417 365 0126</p>
-    </div>
-    <div id="bioclose">X</div>
-  </div>
+  {{ block "main" . }}{{ end }}
 
-  <div id="content">
-
-    {{ block "main" . }}{{ end }}
-
-  </div>
 
   {{ partial "foot" . }}
 

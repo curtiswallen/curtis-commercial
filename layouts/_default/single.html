@@ -1,0 +1,73 @@
+{{ define "main" }}
+
+	{{ if .Params.collection }}
+
+	<style>header nav { display: none }</style>
+
+	<div id="page-info">
+
+	  <div id="page-title">{{ .Params.shortTitle }}</div>
+	  <div id="page-text">{{ .Params.shortDescription }}</div>
+
+	</div>
+
+	<div id="swiper-nav-wrapper">
+		<div class="swiper-navigation">
+			<a href="#" class="swiper-button-prev">Prev</a> | <a href="#" class="swiper-button-next">Next</a></div>
+			(<div class="swiper-pagination"></div>)
+			<div class="swiper-grid">Show thumbnails</div>
+	</div>
+
+	<div id="page-images">
+		
+		<div class="swiper mySwiper gallery">
+			<ul class="swiper-wrapper">
+				{{ $.Scratch.Set "counter" 0 }}
+				{{ range .Params.images }}
+					{{ if .asset }}
+					{{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+					<li class="swiper-slide" data-hash="{{$.Scratch.Get "counter"}}">
+						<a href="{{ .asset.url }}">
+							<img 
+							src="{{ .asset.url }}?w=1200"
+							alt="{{ if .altText }}{{ .altText }}{{ else if .title }}{{ .title }}{{ else }}{{ end}}"
+							>
+						</a>
+					</li>	
+					{{ end }}
+				{{ end }}
+			</ul>
+		</div>
+
+		<div id="thumb-grid" class="grid" style="display: none">
+			<ul>
+			{{ $.Scratch.Set "counter2" 0 }}
+			{{ range .Params.images }}
+				{{ if .asset }}
+				{{ $.Scratch.Set "counter2" (add ($.Scratch.Get "counter2") 1) }}
+				<li class="grid-item">
+						<a href="#{{$.Scratch.Get "counter2"}}" ><img 
+							src="{{ .asset.url }}?w=600"
+							alt="{{ if .altText }}{{ .altText }}{{ else if .title }}{{ .title }}{{ else }}{{ end}}"
+						></a>
+				</li>
+				{{ end }}
+			{{ end }}
+			</ul>
+		</div>
+
+	</div>
+
+	{{ end }}
+
+	{{ if .Params.info }}
+
+		<div id="info">
+
+			{{ .RenderString .Params.description }}
+
+		</div>
+
+	{{ end }}
+
+{{ end }}

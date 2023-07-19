@@ -90,74 +90,67 @@ textarea {
 body {
   font-family: Arial;
   font-size: 1em;
-  padding: 25px;
+  padding: 4vh;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: 5px;
+  padding-right: 2px;
+  display: block;
 }
 
 a:hover {
   color: red;
 }
 
-#biocontainer {
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
+header {
+  color: red;
+  font-size: 2em;
+  z-index: 101;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+  left: 2vw;
+  top: 2vh;
+}
+
+nav {
+  margin-top: 4vh;
+}
+
+header a {
+  text-decoration: none;
+  color: red;
+}
+
+header a:hover {
+  color: black;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header ul img {
   display: none;
 }
 
-#bio {
-  font-size: 2vw;
-  position: fixed;
+header li {
+  display: inline-block;
+  margin-right: 4vw;
+  margin-bottom: 4vh;
+}
+
+#bg {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-#bio p {
-  margin-top: 0;
-}
-
-#bio p:last-child {
-  margin-bottom: 0;
-}
-
-#bioclose {
-  position: fixed;
-  right: 10px;
-  top: 30px;
-  z-index: 10060;
-  margin-top: -14px;
-  margin-right: -14px;
-  height: 44px;
-  width: 44px;
-  line-height: 44px;
-  font-family: Arial,Baskerville,monospace;
-  color: #000;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-#name {
-  color: red;
-  font-size: 2em;
-  position: fixed;
-  top: 50%;
-  left: -30px;
-  transform: rotate(-90deg);
-  z-index: 101;
-}
-
-#name2 {
-  color: red;
-  font-size: 2em;
-  position: fixed;
-  top: 50%;
-  right: -30px;
-  transform: rotate(90deg);
-  z-index: 101;
+#bg img {
+  max-height: 70vh;
 }
 
 .name {
@@ -165,70 +158,118 @@ a:hover {
   font-weight: 100;
 }
 
-.grid {
+.name:hover {
+  color: black;
+}
+
+#info {  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#page-info {
+  position: fixed;
+  bottom: 2vh;
+  left: 2vw;
+  color: red;
+}
+
+#page-title {
+  display: inline-block;
+  padding-right: 4vw;
+  font-size: 2em;
+}
+
+#page-text {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+#page-images {
   text-align: center;
-  max-width: 80vw;
-  margin: 0 auto;
+  margin-top: 11vh;
+}
+
+#page-images img {
+  max-height: 70vh;
 }
 
 .grid-sizer,
 .grid-item {
-    width: 50%;
+    width: 20%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
     padding-bottom: 5%;
-    margin: 0 auto;
+    text-align: center;
 }
 
 .grid-item img {
-    max-width: 90%;
-    max-height: 95vh;
+    width: 100%;
+
 }
 
-#sliders {
+.mySwiper img {
+  max-height: 70vh;
+}
+
+#thumb-grid {
+  padding-top: 10px;
+}
+
+#swiper-nav-wrapper {
+  display: block;
   position: fixed;
-  top: 25px;
-  right: -15px;
+  top: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-size: 1.25em;
 }
 
-#gridSlider {
-  text-align: center;
-  position: relative;
-  height: 100px;
-  padding-bottom: 10px;
+#swiper-nav-wrapper a {
+  color: red;
+  text-decoration: none;
 }
 
-#gridCount {
-  text-align: center;
-  position: relative;
+#swiper-nav-wrapper a:hover {
+  color: black;
+  text-decoration: none;
 }
 
-.slider {
-  transform: rotate(270deg) translateX(-40px);
-  -moz-transform: rotate(270deg) translateX(-40px);
-  -webkit-appearance: none;
-  width: 100px;
-  height: 2px;
-  border-radius: 2px;  
-  background: #000;
-  outline: none;
-  opacity: 1;
+.swiper-wrapper {
+  margin: 0;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%; 
-  background: #000;
+.swiper-navigation {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.swiper-grid {
+  display: inline-block;
   cursor: pointer;
+  color: red;
+  padding-left: 20px;
 }
 
-.slider::-moz-range-thumb {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #000;
-  cursor: pointer;
+.swiper-grid:hover {
+  color: black;
+}
+
+.swiper-pagination {
+  position: relative;
+  display: inline-block;
+}
+
+.swiper-pagination-fraction {
+  width: auto;
+  bottom: 1px;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
 }
 
 .sl-wrapper .sl-close {

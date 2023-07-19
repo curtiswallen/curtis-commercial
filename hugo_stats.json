@@ -3,40 +3,47 @@
     "tags": [
       "a",
       "body",
-      "br",
       "div",
       "footer",
       "head",
       "header",
       "html",
       "img",
-      "input",
+      "li",
       "link",
       "meta",
+      "nav",
       "p",
       "script",
-      "title"
+      "style",
+      "title",
+      "ul"
     ],
     "classes": [
+      "gallery",
       "grid",
       "grid-item",
-      "grid-sizer",
-      "lazyload",
+      "mySwiper",
       "name",
-      "slider"
+      "swiper",
+      "swiper-button-next",
+      "swiper-button-prev",
+      "swiper-grid",
+      "swiper-navigation",
+      "swiper-pagination",
+      "swiper-slide",
+      "swiper-wrapper"
     ],
     "ids": [
-      "bio",
-      "bioclose",
-      "biocontainer",
-      "content",
-      "gridCount",
-      "gridSlide",
-      "gridSlider",
+      "bg",
+      "info",
       "name",
-      "name2",
-      "nav",
-      "sliders"
+      "page-images",
+      "page-info",
+      "page-text",
+      "page-title",
+      "swiper-nav-wrapper",
+      "thumb-grid"
     ]
   }
 }

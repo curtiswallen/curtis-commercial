@@ -1,0 +1,1 @@
+{"info":true,"shortTitle":"About","longTitle":"About / Contact Info","description":"b. 1989 Branson, Missouri\n\nLives and works in Brooklyn, New York\n\n\n\nstudio@curtiswallen.com"}

@@ -1,16 +1,9 @@
 {{ define "main" }}
 
-	<div class="grid">
-		<div class="grid-sizer"></div>
-		{{ with .Site.GetPage "/homepage" }}
+	<div id="bg">
 
-			{{ range .Params.images }}
-
-			<div class="grid-item"><a href="{{ .asset.url }}"><img class="lazyload" src="{{ .asset.url }}?auto=format&w=1200&q=100"></a></div>
-
-			{{ end }}
-
-		{{ end }}
+		<img src="">
+			
 	</div>
 
 {{ end }}
