@@ -162,6 +162,10 @@ header li {
   color: black;
 }
 
+#homepage-images {
+  display: none;
+}
+
 #info {  
   position: absolute;
   top: 50%;
@@ -174,6 +178,7 @@ header li {
   bottom: 2vh;
   left: 2vw;
   color: red;
+  width: 96vw;
 }
 
 #page-title {
@@ -184,7 +189,7 @@ header li {
 
 #page-text {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 #page-images {

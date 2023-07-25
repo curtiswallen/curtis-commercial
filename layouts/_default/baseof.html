@@ -10,7 +10,7 @@
 
     <nav>
       <ul>
-        {{ range where .Site.Pages "Params.collection" true }}
+        {{ range sort (where .Site.Pages "Params.collection" true) ".Params.collectionDate" "desc" }}
           <li><a href="{{ .RelPermalink }}"><img src="{{ if .Params.images }} {{ range first 1 .Params.images }} {{ .asset.url }}?auto=format&w=1200&q=100 {{ end }} {{ end }}">{{ .Params.shortTitle }}</a></li>
         {{ end }}
         <li><a href="/info"><img src="">Info</a></li>

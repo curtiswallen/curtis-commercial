@@ -1,3 +1,10 @@
+$(document).ready(function() {
+  const selection = $('#homepage-images li');
+  const randLi = selection[Math.floor(Math.random() * selection.length)];  
+  const image = $(randLi).text();
+  $('#bg img').attr('src', image);
+});
+
 $('nav ul li a').hover(
   function() {
     var image = $(this).find('img').attr('src');

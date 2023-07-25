@@ -1,6 +1,13 @@
 {{ define "main" }}
 
 	<div id="bg">
+		<ul id="homepage-images">
+		{{ with .Site.GetPage "page" "homepage.md" }}
+			{{ range .Params.images }}
+				<li>{{ .asset.url }}</li>
+			{{ end }}
+		{{ end }}
+		</ul>
 
 		<img src="">
 			
