@@ -4,25 +4,40 @@
   {{ partial "head" . }}
   
   <body>
+  <div id="content">
 
   <header>
-    <div id="name" class="name">Curtis Wallen</div>
+    <div id="top-bar">
+      <div id="name" class="name">Curtis Wallen <span id="name-arrow">→</span></div>
+    </div>
 
-    <nav>
+    <nav class="hidden">
       <ul>
+        <li><a href="/info/">Info</a></li>
         {{ range sort (where .Site.Pages "Params.collection" true) ".Params.collectionDate" "desc" }}
           <li><a href="{{ .RelPermalink }}"><img src="{{ if .Params.images }} {{ range first 1 .Params.images }} {{ .asset.url }}?auto=format&w=1200&q=100 {{ end }} {{ end }}">{{ .Params.shortTitle }}</a></li>
         {{ end }}
-        <li><a href="/info"><img src="">Info</a></li>
       </ul>
     </nav>
   </header>
 
-
   {{ block "main" . }}{{ end }}
 
+  </div>
 
-  {{ partial "foot" . }}
+  <!--{{ partial "foot" . }}-->
+
+  <div id="bg">
+      
+  </div>
+
+  <!--ul id="homepage-images">
+    {{ with .Site.GetPage "page" "homepage.md" }}
+      {{ range .Params.images }}
+        <li><img src="{{ .asset.url }}"></li>
+      {{ end }}
+    {{ end }}
+  </ul-->
 
   {{ $modernizr := resources.Get "js/vendor/modernizr-3.11.2.min.js" }}
   {{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.1.min.js" }}
@@ -34,7 +49,7 @@
   {{ $main := resources.Get "js/main.js" }}
 
   {{ $fullscript := slice $modernizr $jquery $masonry $simplelightbox $imagesloaded $swiper $plugins $main | resources.Concat "js/vendor.js" | minify | fingerprint }}
-  <script src="{{ $fullscript.RelPermalink }}" integrity="{{ $fullscript.Data.Integrity }}"></script>
+  <script src="{{ $fullscript.RelPermalink }}"></script>
 
   </body>
 

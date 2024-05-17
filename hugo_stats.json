@@ -3,8 +3,8 @@
     "tags": [
       "a",
       "body",
+      "br",
       "div",
-      "footer",
       "head",
       "header",
       "html",
@@ -15,7 +15,7 @@
       "nav",
       "p",
       "script",
-      "style",
+      "span",
       "title",
       "ul"
     ],
@@ -23,28 +23,27 @@
       "gallery",
       "grid",
       "grid-item",
-      "mySwiper",
+      "gutter-sizer",
+      "hidden",
       "name",
-      "swiper",
-      "swiper-button-next",
-      "swiper-button-prev",
-      "swiper-grid",
-      "swiper-navigation",
-      "swiper-pagination",
-      "swiper-slide",
-      "swiper-wrapper"
+      "preview",
+      "progressive",
+      "replace"
     ],
     "ids": [
       "bg",
-      "homepage-images",
+      "content",
       "info",
       "name",
+      "name-arrow",
+      "page-credits",
       "page-images",
       "page-info",
       "page-text",
       "page-title",
-      "swiper-nav-wrapper",
-      "thumb-grid"
+      "thumb-grid",
+      "thumb-line",
+      "top-bar"
     ]
   }
 }

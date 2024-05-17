@@ -7,7 +7,7 @@ const client = sanityClient({
   projectId: 'rjnzi28z',
   dataset: 'production',
   apiVersion: '2023-01-04', 
-  token: 'skTtfgU2HSnzGXEK3NunTSKIUINfrgdNFiSOnEf8coGT4bvkpyfBasQ41WKvJkafpEFhtonJmLueRXCxb', 
+  token: 'skIZkeyBWVZahVDoh1g0vpIMNNlbXbdAZQfkJXfSf4u0DsJqW30yHBP5wTk0y3OPWCPCbL4977Qf5DhzWPhNgp9ZtAbjRXtYRCjxFDGb9TCYlRPSp8h1IrF2ZT4K2Q4jhbJcTzcyhrQEq37SHsktc6DotYSvfCV51U0KublgerY1Y6XWb4MO', 
   useCdn: false
 })
 
@@ -71,7 +71,8 @@ client.fetch(`*[_type == "photoCollection"]{
         defined(altText)=>{altText},
         defined(description)=>{description},
         defined(title)=>{title},
-        defined(opt.media.tags)=>{"tags": opt.media.tags[]->name.current}
+        defined(opt.media.tags)=>{"tags": opt.media.tags[]->name.current},
+        defined(metadata)=>{metadata}
       }
     }}
   }
@@ -82,7 +83,7 @@ client.fetch(`*[_type == "photoCollection"]{
     const cleanLongDescription = toMarkdown(entry.longDescription);
     const slug = slugify(entry.shortTitle).toLowerCase();
 
-    let dir = 'content/';
+    let dir = 'content/'+slug;
 
     if (!fs.existsSync(dir)){
       fs.mkdirSync(dir, { recursive: true });
@@ -99,7 +100,7 @@ client.fetch(`*[_type == "photoCollection"]{
     photoCollection.images = entry.images
 
     let JSONcollection = JSON.stringify(photoCollection);
-      fs.writeFile(dir+slug+".md", JSONcollection, (err) => {
+      fs.writeFile(dir+"/"+"index.md", JSONcollection, (err) => {
       if (err) {
           throw err;
       }

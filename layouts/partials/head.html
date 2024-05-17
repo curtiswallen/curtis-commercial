@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>Curtis Wallen</title>
+  <title>Curtis Wallen {{ if .Params.shortTitle }} - {{ .Params.shortTitle }} {{ end }}</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,7 @@
   {{ $csssimplelightbox := resources.Get "css/simple-lightbox.css" }}
   {{ $cssmain := resources.Get "css/main.css" }}
   {{ $allcss := slice $cssnormalize $cssswiper $csssimplelightbox $cssmain | resources.Concat "css/vendor.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $allcss.RelPermalink }}" integrity="{{ $allcss.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $allcss.RelPermalink }}">
 
   <meta name="theme-color" content="#fff">
 </head>

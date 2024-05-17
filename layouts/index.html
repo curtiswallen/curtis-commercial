@@ -1,16 +1,56 @@
 {{ define "main" }}
 
-	<div id="bg">
-		<ul id="homepage-images">
-		{{ with .Site.GetPage "page" "homepage.md" }}
-			{{ range .Params.images }}
-				<li>{{ .asset.url }}</li>
-			{{ end }}
-		{{ end }}
-		</ul>
+	<div id="page-images">
 
-		<img src="">
-			
+		<div id="thumb-grid" class="grid gallery">
+			<ul>
+			{{ range where $.Site.Pages ".Params.shortTitle" "Overview" }}
+			{{ range .Params.images }}
+				{{ if .asset }}
+				<li class="grid-item">
+					<div class="gutter-sizer"></div>
+						<a href="{{ .asset.url }}?auto=format&w=2000" data-href="{{ .asset.url }}?auto=format&w=600" class="progressive replace">
+							<img 
+							class="preview"
+							src="{{ .asset.metadata.lqip | safeURL }}"
+							alt="{{ if .altText }}{{ .altText }}{{ else if .title }}{{ .title }}{{ else }}{{ end}}"
+							>
+						</a>
+				</li>
+				{{ end }}
+			{{ end }}
+			{{ end }}
+			</ul>
+		</div>
+
 	</div>
+
+	<div id="page-info">
+
+	  <div id="thumb-line" class="hidden">
+			<ul>
+			{{ range where $.Site.Pages ".Params.shortTitle" "Overview" }}
+			{{ range .Params.images }}
+				{{ if .asset }}
+				<li>
+					<img 
+						src="{{ .asset.url }}?auto=format&w=100"
+						alt="{{ if .altText }}{{ .altText }}{{ else if .title }}{{ .title }}{{ else }}{{ end}}"
+						>
+				</li>
+				{{ end }}
+			{{ end }}
+			{{ end }}
+			</ul>
+		</div>
+	  <div id="page-text">
+	  	{{ range where $.Site.Pages ".Params.shortTitle" "Overview" }}
+		  <div id="page-title">{{ .Params.shortTitle }}</div>
+		  <div id="page-credits">{{ .RenderString .Params.shortDescription }}</div>
+		  {{ end }}
+	  </div>
+
+	</div>
+
 
 {{ end }}
