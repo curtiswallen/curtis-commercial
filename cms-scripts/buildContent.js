@@ -1,13 +1,14 @@
 import fs from 'fs-extra';
 import slugify from 'slugify';
 import sanityClient from '@sanity/client';
-import toMarkdown from '@sanity/block-content-to-markdown'
+import toMarkdown from '@sanity/block-content-to-markdown';
+import 'dotenv/config';
 
 const client = sanityClient({
   projectId: 'rjnzi28z',
   dataset: 'production',
   apiVersion: '2023-01-04', 
-  token: 'skIZkeyBWVZahVDoh1g0vpIMNNlbXbdAZQfkJXfSf4u0DsJqW30yHBP5wTk0y3OPWCPCbL4977Qf5DhzWPhNgp9ZtAbjRXtYRCjxFDGb9TCYlRPSp8h1IrF2ZT4K2Q4jhbJcTzcyhrQEq37SHsktc6DotYSvfCV51U0KublgerY1Y6XWb4MO', 
+  token: process.env.SECRET_KEY, 
   useCdn: false
 })
 
