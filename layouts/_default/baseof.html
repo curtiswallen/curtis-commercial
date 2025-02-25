@@ -8,7 +8,16 @@
 
   <header>
     <div id="top-bar">
-      <div id="name" class="name">Curtis Wallen <span id="name-arrow">→</span></div>
+      <div id="name" class="name">
+        <div>Curtis Wallen</div> 
+        <div id="name-arrow">→</div> 
+        <div id="nav-title">
+          {{ if .Params.collection }}{{ .Params.shortTitle }}
+          {{ else if .Params.info }}Info
+          {{ else }}Overview
+          {{ end }}
+        </div>
+      </div>
     </div>
 
     <nav class="hidden">

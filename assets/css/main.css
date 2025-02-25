@@ -151,10 +151,11 @@ header li {
   margin-bottom: 4vh;
 }
 
-#top-bar {
+#name {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 #mode-toggle {

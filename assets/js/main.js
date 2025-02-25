@@ -61,11 +61,13 @@ $('#name').click(function () {
     $('#thumb-grid').addClass('hidden');
     $('#thumb-line').removeClass('hidden');
     $('#name-arrow').text('↓');
+    $('#nav-title').addClass('hidden');
   } else {
     $('header nav').addClass('hidden');
     $('#thumb-grid').removeClass('hidden');
     $('#thumb-line').addClass('hidden');
     $('#name-arrow').text('→');
+    $('#nav-title').removeClass('hidden');
   }
 });
 
