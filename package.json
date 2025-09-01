@@ -4,6 +4,7 @@
     "@sanity/client": "^4.0.0",
     "dotenv": "^16.4.7",
     "fs-extra": "^11.1.0",
+    "sanity": "^4.6.0",
     "slugify": "^1.6.5"
   }
 }
